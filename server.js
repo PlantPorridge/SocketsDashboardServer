@@ -11,6 +11,10 @@ const io = require('socket.io')(http);
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.get('/', function(req, res){
+    res.send('Hello World!');
+})
+
 // MongoClient.connect(dbconnection, (err, database) => {
 //     if (err) return console.log(err)
 //     db = database
@@ -66,9 +70,9 @@ io.on('connection', (socket) => {
 
 
 
-http.listen(5000, () => {
-    console.log('Server started on port 5000');
-});
+// http.listen(5000, () => {
+//     console.log('Server started on port 5000');
+// });
 
 randomWalk();
 trigomicFunction();
